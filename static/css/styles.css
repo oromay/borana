@@ -71,6 +71,19 @@ figcaption {
     padding-top: 40px;
 }
 
+.circlenum {
+    margin-top: 61px;
+    border-radius: 50%;
+    width: 55px;
+    font-size: 2em;
+    border: 2px solid #1f6200;
+}
+.circlenum span {
+    text-align: center;
+    line-height: 55px;
+    display: block;
+}
+
 @media screen and (min-width: 480px) {
     .jumbotron .container div {
         height: 15%;

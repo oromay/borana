@@ -67,6 +67,17 @@ figcaption {
     font-size: 1.2em;
 }
 
+.lead {
+    padding-top: 40px;
+}
+
+.cicrle {
+    border: 2px red solid;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+}
+
 @media screen and (min-width: 480px) {
     .jumbotron .container div {
         height: 15%;
