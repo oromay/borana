@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+.navbar-default {
+    color: black;
+    background-color: white;
+}
+
+
+
+.jumbotron {
+    background-size: 100%;
+    background-image: url('../images/jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+.jumbotron{
+    text-align: center;
+    padding: 140px;
+    font-weight: bolder;
+}
