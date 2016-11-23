@@ -3,6 +3,7 @@ html,body {
     font-family: "Open Sans", serif!important;
 }
 
+
 .jumbotron {
     position: relative;
     height: 100%;
@@ -50,9 +51,12 @@ background-color: rgba(28, 134, 15, 0.1);
 #main-content {
     margin-top: 50px;
 }
-#conditions {
 
+h2 {
+    padding-top: 35px;
+    padding-bottom: 20px;
 }
+
 #conditions h1 {
     margin-top: 150px;
     text-align: center;
@@ -65,6 +69,10 @@ figcaption {
     font-family: "Open Sans", serif;
     font-weight: 300;
     font-size: 1.2em;
+}
+
+.space {
+    margin-top: 75px;
 }
 
 .lead {
@@ -80,7 +88,7 @@ figcaption {
 }
 .circlenum span {
     text-align: center;
-    line-height: 55px;
+    line-height: 50px;
     display: block;
 }
 
@@ -107,6 +115,27 @@ figure {
         height: 8%;
     }
 
+}
+@media screen and (max-width: 480px) {
+    .circlenum {
+        margin-top: 61px;
+        border-radius: 50%;
+        width: 35px;
+        font-size: 1.3em;
+        border: 2px solid #1f6200;
+    }
+    .circlenum span {
+        text-align: center;
+        line-height: 33px;
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+   .col-xxs {
+      display:block;
+      float:none;
+      width: 100%
+   }
 }
 
 @font-face {
