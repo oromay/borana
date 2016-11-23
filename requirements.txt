@@ -2,16 +2,8 @@ dj-database-url==0.4.1
 Django==1.10.3
 django-crispy-forms==1.6.0
 django-multiupload==0.5.2
-django-pagedown==0.1.1
-django-registration==2.1.2
-django-tagging==0.4.3
-gunicorn==19.6.0
-lorem-ipsum-generator==0.3
 Pillow==3.3.0
-psycopg2==2.6.2
-pyenchant==1.6.8
 python-slugify==1.2.1
-six==1.10.0
 translate==2.0.0
 translit==0.2a1
 transliterate==1.8.1
