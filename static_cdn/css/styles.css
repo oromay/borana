@@ -140,8 +140,11 @@ figure {
       float:none;
       width: 100%
    }
+   .jumbotron h1{
+       margin-bottom: 24px;
+   }
    .jumbotron h2{
-   font-size: 1.5em;
+   font-size: 2em;
    }
 }
 
