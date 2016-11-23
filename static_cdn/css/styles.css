@@ -140,6 +140,9 @@ figure {
       float:none;
       width: 100%
    }
+   .jumbotron h2{
+   font-size: 1.5em;
+   }
 }
 
 @font-face {
