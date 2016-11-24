@@ -22,9 +22,9 @@ class ApplyForm(forms.ModelForm):
         'first_name',
         'email',
         HTML("""
-        <p>Пожалуйста, используйте текстовые форматы (rtf, doc/docx, odt). Вы можете прикрепить несколько файлов или объединить их в один документ.</p>
+        <p>Пожалуйста, используйте текстовые форматы (rtf, doc/docx, odt). Вы можете отправит файлы по-отедльности или объединить их в несколько документов (файл с Вашим проектом желательно оставить анонимным).</p>
         """),
-        Field('attachments', css_class='file', type='file', data_show_upload="false"),
+        Field('attachments', css_class='file', type='file', data_show_upload="false"), HTML("{% csrf_token %}"),
         FormActions(Submit('purchase', 'ОТПРАВИТЬ', css_class='btn-primary btn-block'))
         ))
     class Meta:

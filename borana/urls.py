@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from apply.views import apply_view
+from apply.views import done_view, apply_view
 from apply.views import UploadView
 
 
 urlpatterns = [
-    url(r'^admin', admin.site.urls),
-    url(r'^done', apply_view, name='home'),
-    url(r'^', UploadView.as_view(), name='home2'),
+    url(r'^admin/', admin.site.urls),
+    url(r'^index/', apply_view, name='apply'),
+    url(r'^done', done_view, name='done'),
+    url(r'^$', UploadView.as_view(), name='home2'),
 ]
