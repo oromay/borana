@@ -14,11 +14,12 @@ html,body {
     background-attachment: fixed;
     color: white;
     padding-bottom: auto;
+    overflow: hidden;
 }
 
 .jumbotron h1{
     margin-top: 24px;
-font-weight: bolder;
+    font-weight: bolder;
 }
 .jumbotron h2{
 font-size: 3em;
@@ -95,6 +96,11 @@ figcaption {
     line-height: 50px;
     display: block;
 }
+footer {
+    background-color: rgb(148, 33, 142);
+    margin-top: 40px;
+}
+
 
 @media screen and (min-width: 480px) {
     .jumbotron .container div {
