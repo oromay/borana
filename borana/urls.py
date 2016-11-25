@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from apply.views import done_view, apply_view
-from apply.views import UploadView
+from apply.views import done_view, UploadView
 
 
 urlpatterns = [
