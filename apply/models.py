@@ -1,6 +1,9 @@
 from django.db import models
-from transliterate import translit
 from slugify import slugify
+from transliterate import translit
+from tinymce.models import HTMLField
+from django.utils.safestring import mark_safe
+
 
 
 def ruslugify(smth):
@@ -28,7 +31,10 @@ class Attachment(models.Model):
 
 class Term(models.Model):
     title = models.CharField("Заголовок", max_length=150)
-    content =  models.TextField('Условие')
+    content =  HTMLField()
 
     def __str__(self):
         return '%s. %s' % (self.id, self.title)
+
+    def cont_marked(self):
+        return mark_safe(self.content)

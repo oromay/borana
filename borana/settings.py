@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'apply',
     # third parties apps
     'crispy_forms',
+    'tinymce',
 
 ]
 

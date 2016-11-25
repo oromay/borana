@@ -1,8 +1,10 @@
-dj-database-url==0.4.1
 Django==1.10.3
 django-crispy-forms==1.6.0
 django-multiupload==0.5.2
+django-tinymce==2.4.0
 Pillow==3.3.0
+psycopg2==2.6.2
+pyenchant==1.6.8
 python-slugify==1.2.1
 translate==2.0.0
 translit==0.2a1

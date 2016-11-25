@@ -10,7 +10,7 @@ from crispy_forms.bootstrap import (
 )
 
 class ApplyForm(forms.ModelForm):
-    attachments = MultiFileField(label = "Обоснование проетка, резюме, смета, рекомендации", min_num=1, max_num=5)
+    attachments = MultiFileField(label = "Обоснование проекта, резюме, смета, рекомендации", min_num=1, max_num=5)
     email = forms.EmailField(required=True)
     def __init__(self, *args, **kwargs):
         super(ApplyForm, self).__init__(*args, **kwargs)

@@ -53,6 +53,7 @@ background-color: rgba(28, 134, 15, 0.1);
     font-size: 1.31em;
 }
 
+
 #main-content {
     margin-top: 50px;
 }
@@ -97,8 +98,11 @@ figcaption {
     display: block;
 }
 footer {
-    background-color: rgb(148, 33, 142);
+    background-color: rgb(16, 66, 3)!important;
+    color: white;
     margin-top: 40px;
+    height: 50px;
+    font-size: 1.2em;
 }
 
 

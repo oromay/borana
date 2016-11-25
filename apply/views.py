@@ -28,20 +28,20 @@ def done_view(request):
     }
     return render(request, "done.html", context)
 
-def apply_view(request):
-    form = ApplyForm(request.POST or None, request.FILES or None)
-    terms = Term.objects.all()
-    if form.is_valid():
-        Apply.objects.create(first_name=form.cleaned_data['first_name'], second_name=form.cleaned_data['second_name'], email=form.cleaned_data['email'])
-        for each in (form.cleaned_data['attachments']):
-            Attachment.objects.create(document=each, applicant = Apply.objects.last())
-        return HttpResponseRedirect('/done')
-    context = {
-        "title": 'Спасибо!',
-        'terms':terms,
-        'form': form,
-        }
-    return render(request, "home.html", context)
+# def apply_view(request):
+#     form = ApplyForm(request.POST or None, request.FILES or None)
+#     terms = Term.objects.all()
+#     if form.is_valid():
+#         Apply.objects.create(first_name=form.cleaned_data['first_name'], second_name=form.cleaned_data['second_name'], email=form.cleaned_data['email'])
+#         for each in (form.cleaned_data['attachments']):
+#             Attachment.objects.create(document=each, applicant = Apply.objects.last())
+#         return HttpResponseRedirect('/done')
+#     context = {
+#         "title": 'Спасибо!',
+#         'terms':terms,
+#         'form': form,
+#         }
+#     return render(request, "home.html", context)
 
 
 

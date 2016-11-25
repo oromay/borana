@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from apply.views import done_view, apply_view
 from apply.views import UploadView
@@ -21,7 +21,7 @@ from apply.views import UploadView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', apply_view, name='apply'),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^done', done_view, name='done'),
     url(r'^$', UploadView.as_view(), name='home2'),
 ]
