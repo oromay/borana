@@ -150,6 +150,9 @@ figure {
       float:none;
       width: 100%
    }
+   .jumbotron{
+       background-image: url('../images/jumbotron_small.jpg');
+   }
    .jumbotron h1{
        margin-bottom: 24px;
    }

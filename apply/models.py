@@ -29,8 +29,6 @@ class Attachment(models.Model):
     def __str__(self):
         return self.applicant.second_name
 
-    def get_absolute_url(self):
-        return '/media_cdn' + upload_location()
 
 class Term(models.Model):
     title = models.CharField("Заголовок", max_length=150)
