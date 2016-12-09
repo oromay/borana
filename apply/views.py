@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from .models import Apply, Attachment, Term
 from .forms import ApplyForm
+from borana.settings import DROPBOX_CLIENT
 
 
 def days_left(deadline):
@@ -27,6 +28,11 @@ def done_view(request):
         "title": 'Спасибо!',
     }
     return render(request, "done.html", context)
+
+def add_to_dropbox(path):
+    with open(('media_cdn/'+path), 'rb') as f:
+        response = DROPBOX_CLIENT.put_file('test/', f)
+
 
 # def apply_view(request):
 #     form = ApplyForm(request.POST or None, request.FILES or None)
@@ -61,4 +67,5 @@ class UploadView(FormView):
         Apply.objects.create(first_name=form.cleaned_data['first_name'], second_name=form.cleaned_data['second_name'], email=form.cleaned_data['email'])
         for each in (form.cleaned_data['attachments']):
             Attachment.objects.create(document=each, applicant = Apply.objects.last())
+            add_to_dropbox(str(Attachment.objects.last().document))
         return super(UploadView, self).form_valid(form)

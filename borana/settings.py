@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import json
+import dropbox
 from django.core.exceptions import ImproperlyConfigured
 from unipath import Path
 
@@ -153,3 +154,4 @@ MEDIA_URL = '/media/'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+DROPBOX_CLIENT = dropbox.client.DropboxClient(get_secret('DROPBOX_TOKEN'))
