@@ -31,7 +31,7 @@ def done_view(request):
 
 def add_to_dropbox(path):
     with open(('media_cdn/'+path), 'rb') as f:
-        response = DROPBOX_CLIENT.put_file('test/', f)
+        response = DROPBOX_CLIENT.put_file(path, f)
 
 
 # def apply_view(request):
