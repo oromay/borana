@@ -57,6 +57,7 @@ class UploadView(FormView):
     success_url = '/done/'
     def get_context_data(self, ** kwargs):
         context = super(UploadView, self).get_context_data( ** kwargs)
+        context['f'] = open('main_text.txt', 'r')
         context['terms'] = Term.objects.all()
         deadline = datetime.date(2017,2,28)
         context['deadline'] = deadline
