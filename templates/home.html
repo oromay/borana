@@ -8,7 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="cache-control" content="max-age=0" />
     {{form.media}}
-    <title>{{title}}</title>
+    <title>АФРИКА ПРАВИТ</title>
+    <link rel="icon"
+      type="image/png"
+      href= {% static "images/favicon.ico" %}>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.3.5/css/fileinput.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css">
@@ -18,22 +21,25 @@
 <body>
 {% include "messages_display.html" %}
     <div class="jumbotron">
-        <div class="container">
-                <h3>ФОНД ПАМЯТИ ЕВГЕНИЯ ШУРЫГИНА ОБЪЯВЛЯЕТ КОНКУРС</h3>
-                <h1>АФРИКА ПРАВИТ</h1><h2>
-                    грант на полевое исследование в Африке южнее Сахары</h2>
-            <div class='hidden-sm'></div>
-            <a href="#conditionsh" class="slidedown"><button type="button" class="btn btn-lg btn-success">
-                Условия конкурса
-            </button></a>
-            <a href="#apply" class="slidedown"><button type="button" class="btn btn-lg btn-success">
-                Подать заявку
-            </button></a>
-        </div>
+            <span>
+                                <h1>АФРИКА ПРАВИТ</h1>
+                <h2>Грант на полевое исследование в Африке южнее Сахары</h2>
+
+<p>
+    <a href="#conditionsh" class="slidedown"><button type="button" class="btn btn-lg btn-success">
+                    условия конкурса
+    </button></a>
+    <a href="#apply" class="slidedown"><button type="button" class="btn btn-lg btn-success">
+                    подать заявку
+    </button></a>
+</p>
+            </span>
     </div>
     <div class="container">
         <div class="row" id='main-content'>
-            <div class="col-md-2"></div>
+            <div class="col-md-2">
+
+            </div>
             <div class="col-md-10 col-sm-12">
                 <figure>
                     <img class="img-responsive" src="{%static 'images/Portret.jpg'%}" alt="">
@@ -46,7 +52,7 @@
 
         </div>
         <div class="row" id='conditions'>
-            <h1 id='conditionsh'>Условия конкурса</h1>
+            <h1 class="sec_heading" id="conditionsh">Условия конкурса</h1>
         </div>
         <div class="col-md-8 col-md-offset-2">
             {{terms.title}}
@@ -70,29 +76,12 @@
                         </div>
                         <div id="collapse1" class="panel-collapse collapse">
                           <div class="panel-body">
-                              <p>Обоснование проекта не должно превышать пять страниц. Вы можете придерживаться данного плана при описании Вашего проекта:</p>
-                              <ol>
-                                  <li><p>Название;</p></li>
-                                  <li><p>Цели исследования: какой Ваш основной исследовательский вопрос?</p></li>
-                                  <li><p>История места или сообщества, если это важно для поставленного вопроса;</p></li>
-                                  <li><p>Обзор литературы по теме: что написано на данную тему и как эта литература соотносится с поставленным Вами вопросом?</p></li>
-                                  <li><p>Методология (уделите особое внимание этому разделу):
-<ul>
-<li>Где будет проходить исследование? (График перемещений, варианты проживания).
-    </li><li>С каким сообществом Вы будете работать?
-    </li><li>Как Вы будете выстраивать отношения с сообществом?).
-    </li><li>Какие методы будете использовать для сбора материалов?
-    </li><li>Есть ли у Вас уже контакты в поле или это первая поездка?
-    </li><li>Какие трудности Вы предвидите в осуществленнии данного проекта? Как вы планируете их преодолеть?
-    </li></ul>
-                                  </p></li>
-                                  <li><p>Личностная мотивация к исследованию данной темы;</p></li>
-                                  <li><p>Библиография.</p></li>
-                              </ol></div>
-                              <p>Укажите в резюме, какими языками Вы владеете. Можно также указать опыт участия в схожих проектах.</p>
-                              <p>Грант покрывает расходы на билет, визу, страховку и проживание.</p>
+                              {% for line in advice  %}
+                                  {{line}}
+                              {% endfor %}
                         </div>
                       </div>
+                    </div>
                     </div>
                              {% endif %}
              </div>
@@ -100,8 +89,9 @@
             {% endfor %}
 
 </div>
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 space">
-      <h1 id='apply'>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <h1 id='apply' class="sec_heading">
+           Подать заявку
       </h1>
       {% crispy form %}
     </div>
@@ -121,10 +111,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.3.5/js/fileinput.min.js"></script>
 <script src="{% static 'js/script.js' %}" charset="utf-8"></script>
 
-<script>
-$(".main_text").html(function () {
-    return $(this).text().replace("В.Р. Арсеньева", '<a href="https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%81%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87">В.Р. Арсеньева</a>');
-});
-</script>
 </body>
 </html>
