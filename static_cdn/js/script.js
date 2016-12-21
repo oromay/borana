@@ -10,3 +10,7 @@ $('.slidedown').click(function() {
     }
   }
 });
+
+$(".main_text, .panel-body").html(function () {
+    return $(this).text();
+});
