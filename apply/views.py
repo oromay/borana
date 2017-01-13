@@ -25,9 +25,10 @@ def days_left(deadline):
 
 def done_view(request):
     context = {
+        "name": 'Грант "Африка"',
         "title": 'Спасибо!',
     }
-    return render(request, "done.html", context)
+    return render(request, "complete.html", context)
 
 def add_to_dropbox(path):
     with open(('media_cdn/'+path), 'rb') as f:
@@ -52,15 +53,16 @@ def add_to_dropbox(path):
 
 
 class UploadView(FormView):
-    template_name = 'home.html'
+    template_name = 'index.html'
     form_class = ApplyForm
     success_url = '/done/'
     def get_context_data(self, ** kwargs):
         context = super(UploadView, self).get_context_data( ** kwargs)
         context['f'] = open('main_text.txt', 'r')
         context['advice'] = open('advice.txt', 'r')
+        context['name'] = 'ГРАНТ "АФРИКА"'
         context['terms'] = Term.objects.all()
-        deadline = datetime.date(2017,2,28)
+        deadline = datetime.date(2017,3,31)
         context['deadline'] = deadline
         context['days_left'] = days_left(deadline)
         return context

@@ -155,3 +155,9 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 DROPBOX_CLIENT = dropbox.client.DropboxClient(get_secret('DROPBOX_TOKEN'))
+
+
+INSTALLED_APPS += ('lockdown', )
+MIDDLEWARE += ('lockdown.middleware.LockdownMiddleware', )
+LOCKDOWN_PASSWORDS = ('nyala', )
+LOCKDOWN_FORM = 'lockdown.forms.LockdownForm'

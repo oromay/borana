@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="jumbotron">
+        <span>
+                            <h1>{{name}}</h1>
+            <h2>Грант для студентов и молодых ученых на проведение гуманитарных или междисциплинарных исследований в одной из стран Африки южнее Сахары</h2>
+
+<p>
+<a href="#conditionsh" class="slidedown"><button type="button" class="btn btn-lg btn-success">
+                условия конкурса
+</button></a>
+<a href="#apply" class="slidedown"><button type="button" class="btn btn-lg btn-success">
+                подать заявку
+</button></a>
+</p>
+        </span>
+</div>
+<div class="container">
+    <div class="row" id='main-content'>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10 col-sm-12">
+            <figure>
+                <img class="img-responsive" src="{%static 'images/Portret.jpg'%}" alt="">
+                <figcaption> Санкт-Петербург, 2011</figcaption>
+            </figure>
+            {% for line in  f%}
+                <p class='main_text'>{{line}}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="row" id='jury'>
+    <div class="col-md-8 col-md-offset-2">
+        <h1 class="sec_heading">Жюри конкурса</h1>
+
+              <div class="row">
+              <div class="col-sm-2 col-xs-3">
+                  <img src="{% static '/images/jury/bocharov2.jpg' %}" alt="" class='img-circle img-responsive'>
+             </div>
+             <div class="col-sm-10 col-xs-9">
+                  <p><b>Виктор Бочаров</b> - доктор исторических наук, профессор кафедры теории общественного развития стран Азии и Африки Восточного факультета СПбГУ</p>
+             </div>
+             <div class="clearfix"></div>
+             <div class="col-sm-2 col-xs-3">
+                 <img src="{% static '/images/jury/elizaveta.volkova.jpg' %}" alt="" class='img-circle img-responsive'>
+             </div>
+             <div class="col-sm-10 col-xs-9">
+                 <p><b>Елизавета Волкова</b> - асприант Практической школы высших исследований, Париж (Ecole pratique des hautes études, Institut des mondes africains)</p>
+             </div>
+             <div class="clearfix"></div>
+             <div class="col-sm-2 col-xs-3">
+                 <img src="{% static '/images/jury/Davydov.jpg' %}" alt="" class='img-circle img-responsive'>
+             </div>
+             <div class="col-sm-10 col-xs-9">
+                 <p><b>Артем Давыдов</b> - кандидат филологических наук, ассистент кафедры африканистики Восточного факультета СПбГУ</p>
+             </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 col-xs-3">
+                <img src="{% static '/images/jury/Dobronravin.jpg' %}" alt="" class='img-circle img-responsive'>
+            </div>
+            <div class="col-sm-10 col-xs-9">
+                <p><b>Николай Добронравин</b> - доктор филологических наук, профессор кафедры мировой политики факультета международных отношений СПбГУ</p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-sm-2 col-xs-3">
+                <img src="{% static '/images/jury/zheltov.jpg' %}" alt="" class='img-circle img-responsive'>
+            </div>
+            <div class="col-sm-10 col-xs-9">
+                <p><b>Александр Желтов</b> - доктор филологических наук, профессор, заведующий кафедрой африканистики Восточного факультета СПбГУ</p>
+            </div>
+                         <div class="clearfix"></div>
+                         <div class="col-sm-2 col-xs-3">
+                             <img src="{% static '/images/jury/maniragena.jpg' %}" alt="" class='img-circle img-responsive'>
+                         </div>
+                         <div class="col-sm-10 col-xs-9">
+                             <p><b>Валенс Манирагена</b> - Председатель правления благотворительного общества "Ичумби"</p>
+                         </div>
+                                      <div class="clearfix"></div>
+
+            <div class="col-sm-2 col-xs-3">
+                <img src="{% static '/images/jury/Siim.jpg' %}" alt="" class='img-circle img-responsive'>
+            </div>
+            <div class="col-sm-10 col-xs-9">
+                <p><b>Анна Сиим (Москвитина)</b> - кандидат филологических наук, старший научный сотрудник МАЭ РАН</p>
+            </div>
+                         <div class="clearfix"></div>
+                         </div>
+
+
+    </div>
+    </div>
+    <div class="row" id='conditions'>
+        <h1 class="sec_heading" id="conditionsh">Условия конкурса</h1>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        {{terms.title}}
+        <p>Грант ориентирован на полевые исследования в Африке южнее Сахары или среди африканских диаспор. К рассмотрению принимаются любые проекты, принадлежащие сфере социальных наук (антропологии, фольклористики, социолингвистики, истории, лингвистики).
+            </p>
+        {% for i in terms %}
+        <div class="row cond">
+            <div class="col-xs-2">
+            <div class="circlenum"><span>{{ i.id }}</span></div></div>
+            <div class="col-xs-10"> <h2>{{ i.title }}</h2></div>
+            <div class="col-xs-2 hidden-xs-down"> </div> <div class="col-xxs col-xs-10">
+                <div class="clearfix visible-xs-block"></div><p>{{i.cont_marked}}</p>
+                {% if i.id == 2 %}<p style='text-align:right; font-weight:bold;'>{{days_left}}</p>
+                {% elif i.id == 3%}
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse1">Рекомендации к документам <span class="caret"></span></a>
+                      </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                      <div class="panel-body">
+                          {% for line in advice  %}
+                              {{line}}
+                          {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                </div>
+                         {% endif %}
+         </div>
+        </div>
+        {% endfor %}
+
+</div>
+<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+  <h1 id='apply' class="sec_heading">
+       Подать заявку
+  </h1>
+  {% crispy form %}
+</div>
+</div>
+{% endblock %}

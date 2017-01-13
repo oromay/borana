@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block styles %}
+    <style media="screen">
+        body {
+            background-size: cover;
+            background-image: url({% static "/images/jumbotron_2.jpg" %});
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    {% if sent %}
+
+            <div class="text-center fullscreen">
+                <h1 id="thanks">Спасибо!</h1>
+            </div>
+    {% else %}
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 well">
+                    {% crispy form %}
+            </div>
+        </div>
+            {% endif %}
+
+
+{% endblock %}

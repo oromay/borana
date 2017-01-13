@@ -17,11 +17,13 @@ from django.contrib.auth.decorators import login_required
 from django.conf.urls import url, include
 from django.contrib import admin
 from apply.views import done_view, UploadView
+from .views import contact_us
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^done', done_view, name='done'),
+    url(r'^contact', contact_us, name='contact'),
     url(r'^$', UploadView.as_view(), name='home2'),
 ]

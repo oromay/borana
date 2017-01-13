@@ -1,0 +1,283 @@
+html,body {
+    height:100%;
+    font-family: "Open Sans", serif!important;
+    text-align: justify;
+}
+
+/*jumbotron*/
+.jumbotron {
+    position: relative;
+    height: 100%;
+    background-size: cover;
+    background-image: url('../images/jumbotron_2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding-bottom: auto;
+    overflow: hidden;
+    vertical-align: super;
+}
+
+#thanks {
+    position: relative;
+    top: 50%;
+    color: white;
+}
+.fullscreen {
+    height: 100%;
+}
+.well {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.jumbotron span{
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content:space-around;
+    flex-direction: column;
+}
+
+.jumbotron span h2 {
+    text-shadow: 0px 5px 5px #000000;
+    padding-bottom: 100px;
+}
+
+.jumbotron span h1 {
+    text-shadow: 5px 5px 5px #000000;
+}
+
+
+
+.jumbotron button{
+background-color: rgba(28, 134, 15, 0.0)!important;
+padding: 15px;
+}
+.jumbotron button:hover{
+background-color: rgba(28, 134, 15, 0.1);
+}
+.jumbotron button:active {
+    background-color: rgba(28, 134, 15, 0.0)!important;
+}
+
+/*end jumbotron*/
+
+/*tabs from a snippet http://codepen.io/anon/pen/ZBNjRv*/
+
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.img-circle {
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+/*main {
+  min-width: 320px;
+  max-width: 1400px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+}*/
+
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+input {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  width: 49%;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  font-size: 1.2em;
+}
+.label span {
+    overflow: hidden;
+}
+
+
+
+.label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + .label {
+  color: #3c3b3b;
+  border: 1px solid #ddd;
+  border-top: 2px solid #3c3b3b;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+/*end-tabs */
+
+/*main contetn*/
+.container p {
+    font-size: 1.31em;
+}
+
+
+#main-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+/* end main contetn*/
+/* conditions */
+.sec_heading {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+h2 {
+    padding-top: 35px;
+    padding-bottom: 20px;
+}
+.checkboxinput {
+    display: inline;
+}
+
+.panel-body {
+    text-align: left;
+}
+
+figcaption {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: right;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+/* end conditions */
+
+
+
+.circlenum {
+    margin-top: 61px;
+    border-radius: 50%;
+    width: 55px;
+    font-size: 2em;
+    border: 2px solid #1f6200;
+}
+.circlenum span {
+    text-align: center;
+    line-height: 50px;
+    display: block;
+}
+
+.btn-primary {
+    background-color: rgb(9, 85, 0);
+    border-color: rgb(5, 46, 0);
+}
+.btn-primary:hover {
+    background-color: rgb(34, 121, 24);
+    border-color: rgb(5, 46, 0);
+}
+.btn-primary:active {
+    background-color: rgb(6, 42, 1)!important;
+    border-color: rgb(5, 46, 0);
+}
+footer {
+    background-color: rgb(0, 0, 0)!important;
+    color: rgb(227, 255, 201);
+    margin-top: 0px;
+    font-size: 1.2em;
+}
+footer a {
+    color: rgb(227, 255, 201);
+    direction: ltr;
+}
+footer a:hover {
+    color: rgb(197, 244, 153);
+    direction: ltr;
+}
+.panel-footer{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+@media screen and (min-width: 480px) {
+    .jumbotron .container div {
+        height: 15%;
+    }
+
+
+}
+@media screen and (min-width: 767px) {
+figure {
+    float: right;
+    width: 50%;
+    margin: 0 0 10px 40px;
+}
+#main-content p {
+    padding-right: 170px;
+}
+
+}
+
+@media screen and (min-width: 767px) and (max-width: 1199px) {
+    .jumbotron .container div {
+        height: 8%;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .circlenum {
+        margin-top: 61px;
+        border-radius: 50%;
+        width: 35px;
+        font-size: 1.3em;
+        border: 2px solid #1f6200;
+    }
+    .circlenum span {
+        text-align: center;
+        line-height: 33px;
+        display: block;
+    }
+    .img-circle {
+        height: auto;
+    }
+}
+@media (max-width: 480px) {
+   .col-xxs {
+      display:block;
+      float:none;
+      width: 100%
+   }
+   .jumbotron{
+       background-image: url('../images/jumbotron_small.jpg');
+   }
+   .jumbotron span h1{
+       margin-bottom: 24px;
+   }
+   .jumbotron h2{
+   font-size: 2em;
+   }
+}
+
+@font-face {
+    font-family: "My Custom Font";
+    src: url('../fonts/Bookerly/Bookerly-Regular.ttf') format("truetype");
+}
